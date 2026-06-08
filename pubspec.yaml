@@ -31,8 +31,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  graphist: ^0.2.5
-  graphist_wiki_data: ^0.2.0
+  graphist: ^0.3.0
+  graphist_wiki_data: ^0.3.0
   window_manager: ^0.2.7
   url_launcher: ^6.1.5
 
