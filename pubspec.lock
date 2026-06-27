@@ -91,17 +91,19 @@ packages:
   graphist:
     dependency: "direct main"
     description:
-      path: "../graphist"
-      relative: true
-    source: path
+      name: graphist
+      sha256: bfaecc34c066d507a1ece71b24851cf6e9a3ece3d6ef38e08c19195eee815b37
+      url: "https://pub.dev"
+    source: hosted
     version: "0.5.0"
   graphist_wiki_data:
     dependency: "direct main"
     description:
-      path: "../graphist_wiki_data"
-      relative: true
-    source: path
-    version: "0.4.0"
+      name: graphist_wiki_data
+      sha256: "87a995614f2665fd5126d9ed211a65b5d45d291bd95aa83cc71df97053c07229"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.4.1"
   http:
     dependency: transitive
     description:
