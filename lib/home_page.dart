@@ -104,23 +104,21 @@ class _HomePageState extends State<HomePage> with WindowListener {
                 Navigator.pop(context);
                 final query =
                     await DialogUtils.showTextInputDialog(context, "Search");
-                if (query == null || query.trim().isEmpty) return;
+                if (!mounted || query == null || query.trim().isEmpty) return;
                 final searchResults = await WikiDataUtils.searchWikiData(query);
-                if (searchResults.isNotEmpty && mounted) {
-                  final selected = await showWikiDataSearchResultList(
-                    context,
-                    "Search results for `$query`",
-                    searchResults,
-                  );
-                  if (selected == null) return;
-                  final node =
-                      await WikiDataEntityNode.tryFromWikidata(selected);
-                  if (node == null) return;
-                  gc.showNode(
-                    node,
-                    const Rect.fromLTWH(100, 100, 175, 50),
-                  );
-                }
+                if (!mounted || searchResults.isEmpty) return;
+                final selected = await showWikiDataSearchResultList(
+                  this.context,
+                  "Search results for `$query`",
+                  searchResults,
+                );
+                if (!mounted || selected == null) return;
+                final node = await WikiDataEntityNode.tryFromWikidata(selected);
+                if (!mounted || node == null) return;
+                gc.showNode(
+                  node,
+                  const Rect.fromLTWH(100, 100, 175, 50),
+                );
               },
             ),
             ListTile(
